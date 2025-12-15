@@ -1,0 +1,48 @@
+{
+  "info": {
+    "name": "API OpenAI Responses",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "Colección de ejemplos para clasificar intención y resumir texto con la API Responses"
+  },
+  "item": [
+    {
+      "name": "Clasificar intención",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"inputUsuario\": \"Hola buenas tardes\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/intencion/clasificar",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "intencion", "clasificar"]
+        }
+      }
+    },
+    {
+      "name": "Resumir texto",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"texto\": \"FastEndpoints permite crear APIs minimalistas rápidamente...\",\n  \"maximoTokensRespuesta\": 150\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/texto/resumir",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "texto", "resumir"]
+        }
+      }
+    }
+  ],
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:5169" }
+  ]
+}
