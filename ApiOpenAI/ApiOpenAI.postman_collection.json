@@ -1,0 +1,70 @@
+{
+  "info": {
+    "name": "API OpenAI Responses",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Clasificar intención",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"inputUsuario\": \"Hola buenas tardes\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/intencion/clasificar",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "intencion",
+            "clasificar"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Resumir texto",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"texto\": \"FastEndpoints permite definir endpoints de forma fluida y concisa.\",\n  \"nivelDetalle\": \"breve\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/texto/resumir",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "texto",
+            "resumir"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:5000"
+    }
+  ]
+}
