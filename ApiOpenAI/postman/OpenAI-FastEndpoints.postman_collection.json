@@ -1,0 +1,62 @@
+{
+  "info": {
+    "name": "API OpenAI FastEndpoints",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Clasificar intención",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/intencion/clasificar",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "intencion", "clasificar"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"inputUsuario\": \"Hola buenas tardes\"\n}"
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Resumir texto",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/texto/resumir",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "texto", "resumir"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"texto\": \"FastEndpoints facilita la creación de APIs rápidas en .NET.\",\n  \"nivelDetalle\": \"breve\"\n}"
+        }
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": { "exec": [ "" ], "type": "text/javascript" }
+    },
+    {
+      "listen": "test",
+      "script": { "exec": [ "" ], "type": "text/javascript" }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:5000"
+    }
+  ]
+}
